@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>autocalculation</title>
+</head>
+<body>
+    <table>
+        <th></th>
+        <th>列１</th>
+        <th>列２</th>
+        <th>列３</th>
+        <th>列４</th>
+        <th>列５</th>
+        <th>列６</th>
+        <th>列７</th>
+        <th>列８</th>
+        <tr>
+            <td>行１</td>
+            <td><input type="number" id="aaa" onkeyup="keyUp('puton')" value="25"></td>
+            <td><input type="number" id="bbb" onkeyup="keyUp('puton')" value="0.1"></td>
+            <td><input type="number" id="ccc" onkeyup="keyUp('puton')" value="0.1"></td>
+            <td><input type="number" id="ddd" onkeyup="keyUp('puton')" value="0.1"></td>
+            <td><input type="number" id="eee" onkeyup="keyUp('puton')" value="0.1"></td>
+            <td><input type="number" id="fff" onkeyup="keyUp('puton')" value="0.1"></td>
+            <td><input type="number" id="ggg" onkeyup="keyUp('puton')" value="0.1"></td>
+            <td><input type="number" id="hhh" onkeyup="keyUp('puton')" value="0.1"></td>
+        </tr>
+        <tr>
+            <td>行２</td>
+            <td><input type="number" id="iii" onkeyup="keyUp('puton')" value="25"></td>
+            <td><input type="number" id="jjj" onkeyup="keyUp('puton')" value="0.1"></td>
+            <td><input type="number" id="kkk" onkeyup="keyUp('puton')" value="0.1"></td>
+            <td><input type="number" id="lll" onkeyup="keyUp('puton')" value="0.1"></td>
+            <td><input type="number" id="mmm" onkeyup="keyUp('puton')" value="0.1"></td>
+            <td><input type="number" id="nnn" onkeyup="keyUp('puton')" value="0.1"></td>
+            <td><input type="number" id="ooo" onkeyup="keyUp('puton')" value="0.1"></td>
+            <td><input type="number" id="ppp" onkeyup="keyUp('puton')" value="0.1"></td>
+        </tr>
+        <tr>
+            <td>行３</td>
+            <td><input type="number" id="qqq" onkeyup="keyUp('puton')" value="25"></td>
+            <td><input type="number" id="rrr" onkeyup="keyUp('puton')" value="0.1"></td>
+            <td><input type="number" id="sss" onkeyup="keyUp('puton')" value="0.1"></td>
+            <td><input type="number" id="ttt" onkeyup="keyUp('puton')" value="0.1"></td>
+            <td><input type="number" id="uuu" onkeyup="keyUp('puton')" value="0.1"></td>
+            <td><input type="number" id="vvv" onkeyup="keyUp('puton')" value="0.1"></td>
+            <td><input type="number" id="www" onkeyup="keyUp('puton')" value="0.1"></td>
+            <td><input type="number" id="xxx" onkeyup="keyUp('puton')" value="0.1"></td>
+        </tr>
+    </table>
+    <p>合計値：<span id="output" style="background-color:azure">77.10</span></p>
+    <p>合計値-1：<span id="output2" style="background-color:ghostwhite">76.10</span></p>
+    
+    <script>
+        function keyUp(id){
+            let aa = Number(document.getElementById("aaa").value)
+            let bb = Number(document.getElementById("bbb").value)
+            let cc = Number(document.getElementById("ccc").value)
+            let dd = Number(document.getElementById("ddd").value)
+            let ee = Number(document.getElementById("eee").value)
+            let ff = Number(document.getElementById("fff").value)
+            let gg = Number(document.getElementById("ggg").value)
+            let hh = Number(document.getElementById("hhh").value)
+            let ii = Number(document.getElementById("iii").value)
+            let jj = Number(document.getElementById("jjj").value)
+            let kk = Number(document.getElementById("kkk").value)
+            let ll = Number(document.getElementById("lll").value)
+            let mm = Number(document.getElementById("mmm").value)
+            let nn = Number(document.getElementById("nnn").value)
+            let oo = Number(document.getElementById("ooo").value)
+            let pp = Number(document.getElementById("ppp").value)
+            let qq = Number(document.getElementById("qqq").value)
+            let rr = Number(document.getElementById("rrr").value)
+            let ss = Number(document.getElementById("sss").value)
+            let tt = Number(document.getElementById("ttt").value)
+            let uu = Number(document.getElementById("uuu").value)
+            let vv = Number(document.getElementById("vvv").value)
+            let ww = Number(document.getElementById("www").value)
+            let xx = Number(document.getElementById("xxx").value)
+            let sum = aa+bb+cc+dd+ee+ff+gg+hh+ii+jj+kk+ll+mm+nn+oo+pp+qq+rr+ss+tt+uu+vv+ww+xx
+            sum = Math.round(sum*100)/100
+            document.getElementById("output").innerHTML = sum;
+            document.getElementById("output2").innerHTML = sum-1;
+            console.log(aa)
+        }
+    </script>
+</body>
+</html>
