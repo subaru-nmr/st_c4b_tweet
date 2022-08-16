@@ -4,7 +4,7 @@ import pandas as pd
 import json
 from collections import Counter
 import tweepy
-import MeCab
+#import MeCab
 
 st.title('Twitter分析アプリ')
 st.write('''
@@ -110,32 +110,32 @@ if option=='ツイート分析':
         st.altair_chart(hist2, use_container_width=True)
         
         
-        wakati = MeCab.Tagger()
+        #wakati = MeCab.Tagger()
         grades = ['A','B','C','D','E']
-        for grade in grades:
-            _df = df[df['いいね評価'] == grade]
-            num_tweet = len(_df)
-            txt = ' '.join(_df['ツイート本文'][:10].to_list()).replace('https://t.co/', '')
-            parts = wakati.parse(txt)
-            words = []
-            for part in parts.split('\n'):
-                if '名詞' in part:
-                    words.append(part.split('\t')[0])
-            words
-            from collections import Counter
-            c = Counter(words)
-            count_df = pd.DataFrame(c.most_common(30),columns=['単語','出現回数'])
-            count_df
-
-            bar2 = alt.Chart(count_df, title=f'{grade}評価の頻出単語 ツイート数{num_tweet}').mark_bar().encode(
-                x='出現回数:Q',
-                y=alt.Y('単語:N', sort='-x')
-            )
-            text = bar2.mark_text(
-                align = 'left',
-                baseline = 'middle',
-                dx = 3
-            ).encode(
-                text='出現回数:Q'
-            )
-            st.altair_chart(bar2 + text, use_container_width=True)
+        #for grade in grades:
+        #    _df = df[df['いいね評価'] == grade]
+        #    num_tweet = len(_df)
+        #    txt = ' '.join(_df['ツイート本文'][:10].to_list()).replace('https://t.co/', '')
+        #    parts = wakati.parse(txt)
+        #    words = []
+        #    for part in parts.split('\n'):
+        #        if '名詞' in part:
+        #            words.append(part.split('\t')[0])
+        #    words
+        #    from collections import Counter
+        #    c = Counter(words)
+        #    count_df = pd.DataFrame(c.most_common(30),columns=['単語','出現回数'])
+        #    count_df
+#
+ #           bar2 = alt.Chart(count_df, title=f'{grade}評価の頻出単語 ツイート数{num_tweet}').mark_bar().encode(
+  #              x='出現回数:Q',
+   #             y=alt.Y('単語:N', sort='-x')
+    #        )
+     #       text = bar2.mark_text(
+      #          align = 'left',
+       #         baseline = 'middle',
+        #        dx = 3
+         #   ).encode(
+          #      text='出現回数:Q'
+           # )
+            #st.altair_chart(bar2 + text, use_container_width=True)
